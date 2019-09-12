@@ -2,8 +2,6 @@
 
 De Akte Radar is een 'radar' á la [buienradar](https://buienradar.nl) waarop de 'geraakte' percelen in de aktes van vandaag zichtbaar zijn gemaakt.
 
-Kleur?
-Status ELAN?
 
 ## Frontend
 
@@ -13,6 +11,8 @@ Buienradar maakt gebruik van een GIF. Deze bestaat uit alle kaartjes in één pl
 
 De Frontend van AkteRadar kan vergelijkbaar werken. Dit is een JavaScript webapp waarin de GIF wordt opgehaald en getoond en overheen wordt 'geschoven'.
 
+Hier heb ik - met grote dank! - gebruik gemaakt van het werk van [MPoelstra](https://github.com/mpoelstra). Hij heeft veel voorwerk gedaan waar ik op kon verder bouwen in mijn eigen [fork](https://github.com/marcvanandel/Angular-OpenLayers-NL).
+
 ## Backend 
 
 De backend van AkteRadar produceert de kaartjes van vandaag in één plaatje, een GIF. Het plaatje bestaat uit één kaartje per heel uur. Dat zijn maximaal 12 kaartjes, namelijk van 07.00 tot 19.00. De openingstijden van het Kadaster zijn van 09.00 tot 15.00 uur en we kunnen in de kaartjes (mogelijk) laten zien wat er binnen en buiten de openingstijden is binnengekomen.
@@ -21,9 +21,13 @@ Per dag is er slechts één plaatje beschikbaar. Dat maakt opvragen vanuit de fr
 
 Let op: `no-cache` zetten voor deze resource, zodat we het plaatje gedurende de dag kunnen vernieuwen met nieuwe data. (zie ook [stackoverflow issue 728616](https://stackoverflow.com/questions/728616/disable-cache-for-some-images))
 
+Voor dit moment heb ik dit even geparkeerd in een aparte branch. De frontend lost dit voor een deel op ... ;-)
+
 ### GIS Server
 
 Voor de kaartjes is een GIS Server nodig. Welke? Via een `/poll` in Slack [#developers](https://kadaster-it.slack.com/archives/C0MGN3JBF/p1568022343021400) komt [MapServer](https://mapserver.org/) daar als favoriet uit. In de PDOK stack rondgekijkend, wordt daar gebruik gemaakt van de (Gemeente) [Amsterdam/mapserver](https://github.com/Amsterdam/mapserver). Dat lijkt een goed (en gemakkelijk) uitgangspunt.
+
+Zie de wijzigingen in mijn [fork](https://github.com/marcvanandel/mapserver).
 
 De wijzigingen voor een extra dataset plus de definitie (`Mapfile`) voor de aktes (`akte_points`), staat in `./mapserver`.
 
