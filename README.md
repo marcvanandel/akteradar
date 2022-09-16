@@ -2,6 +2,7 @@
 
 De Akte Radar is een 'radar' á la [buienradar](https://buienradar.nl) waarop de 'geraakte' percelen in de aktes van vandaag zichtbaar zijn gemaakt.
 
+Screen recording: [AkteRadar 0.1](AkteRadar-0.1.mp4)
 
 ## Frontend
 
